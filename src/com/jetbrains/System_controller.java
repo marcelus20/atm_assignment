@@ -8,7 +8,7 @@ public class System_controller {
 
     //THIS METHOD PRINTS EVERYTHING
     public void print(Object element){
-        System.out.println(element);
+        System.out.print(element+"\n");
     }
     //THIS METHOD CAPTURES TEXT FROM KEYBOARD
     public String text_cap(String msg){
@@ -56,5 +56,28 @@ public class System_controller {
             list[i] = list_files[i].getName().split(".txt")[0];
         }
     return list;}
+    //VALIDATING THE TEXT_CAP METHOD
+    public String regex_val(String msg, String regex, String error_msg){
+        String element;
+        boolean valid;
+        do{
+            element = text_cap(msg);
+            if (!element.matches(regex)){
+                print(error_msg);
+                valid = false;
+            }else{
+                valid = true;
+            }
+        }while(!valid);
+    return element;}
+    //CHECKING IF FILE EXISTS
+    public boolean f_exists(String address){
+        if(!new File(address).exists()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 }
