@@ -3,8 +3,10 @@ package com.jetbrains;
 public class Main {
 
     Main(){
-        System_controller sys = new System_controller();
-        sys.print(1);
+        User_rep user = new User_rep();
+        //user.login();
+        System_controller sys= new System_controller();
+        sys.array_printer(sys.array_lister("src\\com\\jetbrains\\users\\"));
     }
 
     public static void main(String[] args) {
