@@ -8,11 +8,11 @@ public class System_controller {
 
     //THIS METHOD PRINTS EVERYTHING
     public void print(Object element){
-        System.out.print(element+"\n");
+        System.out.println(element);
     }
     //THIS METHOD CAPTURES TEXT FROM KEYBOARD
     public String text_cap(String msg){
-        print(msg);
+        System.out.print(msg);
         String element = "";
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try{
@@ -73,11 +73,73 @@ public class System_controller {
     //CHECKING IF FILE EXISTS
     public boolean f_exists(String address){
         if(!new File(address).exists()){
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         }
     }
+    //THIS METHOD PRINTS THE SAME STRING THE TIMES YOU WANT IN THE SAME LINE
+    //IF YOU DO, FOR INSTANCE str_mult("=",5), IT WILL RETURN "====="
+    public String str_mult(String str, int times){
+        String text = "";
+        for (int i = 0; i < times; i++){
+            text += str;
+        }
+        return text;
+    }
+    //JUST A METHOD TO WELCOME WHO STARTS THE SYSTEM
+    public void welcome_msg(){
+
+        String[] msg_element = new String[]{"WELCOME",
+                "TO THE ","ATM SYSTEM BANK",
+                "PLEASE,",
+                "LOG INTO THE SYSTEM"};
+        Frame_model frame = new Frame_model(24, 0);
+        frame.set_frame_centralized(msg_element);
+    }
+    //THE MENU HOME AFTER THE PERSON HAS LOGGED IN
+    public void home_user(String id){
+        User_rep user = new User_rep();
+        String key;
+        String[] menu_options = new String[]{
+                "Check your balance", "Change your password",
+                "Deposit a value ", "Withdraw a value",
+                "Check stock prices", "Log off ", "Shutdown"
+        };
+        String regex = "[1-"+menu_options.length+"]";
+        Frame_model frame = new Frame_model(24,0);
+        frame.set_frame_ordered(menu_options);
+
+        key = regex_val("OPTION: ", regex,
+                "You should type just numbers between 1 and "+menu_options.length);
+        if(key.equals("1")){
+            user.check_bal(id);
+            home_user(id);
+        }else if(key.equals("2")){
+            user.cg_pass(id);
+            home_user(id);
+        }else if(key.equals("3")){
+
+            home_user(id);
+        }else if(key.equals("4")){
+
+            home_user(id);
+        }else if(key.equals("5")){
+
+            home_user(id);
+        }else if(key.equals("6")){
+
+            home_user(id);
+        }else if(key.equals("7")){
+            System.exit(0);
+    }}
+    //THIS METHOD IS FOR THE USER HAVE SOME TIME TO ANALYSING THE OUTCOMES BEFORE THE CODE CONTINUES
+    //IT'S A EQUIVALENT System.pause() FROM C LANGUAGE
+    public void pause(){
+        text_cap("Press any key to continue...");
+
+    }
+
 
 
 }
