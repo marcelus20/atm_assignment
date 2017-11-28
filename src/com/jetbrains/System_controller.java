@@ -1,8 +1,5 @@
 package com.jetbrains;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.FileReader;
-import java.io.File;
+import java.io.*;
 
 public class System_controller {
 
@@ -138,6 +135,36 @@ public class System_controller {
     public void pause(){
         text_cap("Press any key to continue...");
 
+    }
+    // THIS METHOD IS RESPONSIBLE FOR WRITING THE WHOLE FILE.
+    public void data_adder(String id, String type, String element){
+        String address = "src\\com\\jetbrains\\"+type+"\\"+id+".txt";
+
+
+
+        String[] text = file_reader(id, 3);
+
+        text[1] = element;
+
+
+        //THIS VARIABLE IS WHERE ALL INFORMATION, EVEN THE UPDATED ELEMENT, WILL BE WRITTEN TO A FILE;
+        String all_file_data = ar_toSring(text);
+        try{
+            BufferedWriter bw = new BufferedWriter(new FileWriter(address));
+            bw.write(all_file_data);
+            bw.flush();
+            bw.close();
+        }catch(Exception e){System.out.println(e);}
+
+    }
+    // THIS METHOD IS USED TO GET THE WHOLE ARRAY AND SAVE IN JUST ONE STRING VARIABLE, BEING THE ELEMENTS
+    // SEPARATED BY "\n", USED TO COMPLEMENT THE DATA_ADDER METHOD.
+    public String ar_toSring(String[] array){
+        String text = "";
+        for (int i = 0; i<array.length;i++){
+            text += array[i] + "\n";
+        }
+       return text;
     }
 
 

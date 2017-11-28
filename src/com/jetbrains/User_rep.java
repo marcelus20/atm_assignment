@@ -34,7 +34,7 @@ public class User_rep {
 
         int counter = 0;
         do{
-            pass = sys.regex_val("Type your password", "[0-9A-Za-z]+", "type just regular characters");
+            pass = sys.regex_val("Type your password: ", "[0-9A-Za-z]+", "type just regular characters");
             if (counter < 3 && !pass.equals(info_list[1])){
                 sys.print("Password not correct");
                 pass_valid = false;
@@ -54,6 +54,7 @@ public class User_rep {
         g_balance = info_list[2];
     sys.home_user(id);
     }
+    // METHOD FOR CHECKING THE BALANCE
     public void check_bal(String id){
         System_controller sys = new System_controller();
         String balance = sys.file_reader(id, 3)[2];
@@ -62,6 +63,7 @@ public class User_rep {
         frame.set_frame_centralized(lines_frame);
         sys.pause();
     }
+    //METHOD FOR CHANGING THE PASSWORD
     public void cg_pass(String id){
         System_controller sys = new System_controller();
         String pass = sys.file_reader(id,3)[1];
@@ -101,14 +103,26 @@ public class User_rep {
                 sys.home_user(id);
                 equal2 = false;
             } else{
-                sys.print("Password changed successfully");
+
+                sys.data_adder(id, "users", new_pass);
+                sys.print("Password changed successfully\n\n");
                 equal2 = true;
 
             }
         }while(!equal2);
-        text = sys.file_reader(id,3)[0]+"\n"+new_pass+"\n"+sys.file_reader(id,3)[2];
-        sys.print(text);
+
+
         sys.pause();
+
+    }
+    //METHOD FOR WITHDRAWING THE VALUE
+    public void withdraw(String id){
+        System_controller sys = new System_controller();
+        String[] withd_options =  new String[]{"5 euros", "10 euros", "20 euros", "50 euros"};
+        Frame_model frame = new Frame_model(20, 0);
+        frame.set_frame_centralized(withd_options);
+        String[]lines = sys.file_reader(id, 3);
+
 
     }
 
