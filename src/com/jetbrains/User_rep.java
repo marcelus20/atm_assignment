@@ -1,5 +1,7 @@
 package com.jetbrains;
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class User_rep {
 
@@ -92,8 +94,18 @@ public class User_rep {
 
         do{
             new_pass = sys.text_cap("type your new password: ");
+            if (new_pass.equals("exit")){
+                sys.print("Returning to Menu");
+                sys.pause();
+                sys.home_user(id);
+            }
 
             confirming = sys.text_cap("Type once again for confirming: ");
+            if (confirming.equals("exit")){
+                sys.print("Returning to Menu");
+                sys.pause();
+                sys.home_user(id);
+            }
 
             if (new_pass.equals("exit")){
                 sys.print("You typed different passwords, please, enter the same password two times");
@@ -104,7 +116,7 @@ public class User_rep {
                 equal2 = false;
             } else{
 
-                sys.data_adder(id, "users", new_pass);
+                sys.data_adder(id, "users", new_pass, 1);//INDEX IS 1 CAUSE IT IS CHANGING THE PASSWORD.
                 sys.print("Password changed successfully\n\n");
                 equal2 = true;
 
@@ -120,9 +132,72 @@ public class User_rep {
         System_controller sys = new System_controller();
         String[] withd_options =  new String[]{"5 euros", "10 euros", "20 euros", "50 euros"};
         Frame_model frame = new Frame_model(20, 0);
-        frame.set_frame_centralized(withd_options);
+        String balance;
+        Double value_;
+        String value;
+        String new_balance;
+
+
+        frame.set_frame_ordered(withd_options);
+
+        // HERE IS WHERE THE USER WILL INSERT THE OPTION FOR THE WITHDRAW OPERATION
+        value = sys.regex_val("OPTION: ", "[1-"+withd_options.length+"]",
+                "You should type just numbers between 1 and "+withd_options.length);
         String[]lines = sys.file_reader(id, 3);
 
+        //INSTEAD OF DOING MANY IF AND ELSE STATEMENT, I AM USING DICTIONARIES, I KNOW THIS IS A MORE COMPLEX AND
+        //ADVANCED STUFF, BUT I PREFER DOING THIS AS THIS IS MUCH EASER.
+
+        Map<String, Double> dictionary = new HashMap<>();
+        dictionary.put("1", 5.00);
+        dictionary.put("2", 10.00);
+        dictionary.put("3", 20.00);
+        dictionary.put("4", 50.00);
+
+        //RETRIEVING THE BALANCE
+        balance = lines[2];
+        value_ = dictionary.get(value);
+        sys.print(value_);
+
+        if (Double.valueOf(balance)<value_){
+            sys.print("Your balance is :"+ balance);
+            sys.print("You do not have enough income \n");
+            sys.pause();
+            sys.home_user(id);
+        }else{
+            new_balance = String.valueOf(Double.valueOf(balance)-value_);
+            sys.data_adder(id, "users", new_balance, 2);//INDEX IS 2 BECAUSE IT'S CHAGING THE BALANCE IN THE FILE
+            sys.print("amount withdrawn successfully\n");
+        }
+        sys.pause();
+
+
+
+
+
+
+
+
+
+
+
+    }
+    //METHOD FOR DEPOSITING THE VALUE
+    public void deposit(String id){
+        System_controller sys = new System_controller();
+        String value;
+        String current_balance;
+        Double new_balance;
+        value = sys.regex_val("Insert the amount you want to deposit: ",
+                "^0$|^[1-9]\\d*$|^\\.\\d+$|^0\\.\\d*$|^[1-9]\\d*\\.\\d*$",// FOR ACCEPTING DECIMAL VALUES AND INTEGERS
+                "just numbers should be deposited, integer or decimal");
+
+        current_balance = sys.file_reader(id, 3)[2];
+        new_balance = Double.valueOf(current_balance)+Double.valueOf(value);
+
+        sys.data_adder(id, "users", sys.round_value(new_balance), 2);
+        sys.print("Deposit carried out successfully");
+        sys.pause();
 
     }
 

@@ -1,5 +1,6 @@
 package com.jetbrains;
 import java.io.*;
+import java.text.DecimalFormat;
 
 public class System_controller {
 
@@ -100,7 +101,7 @@ public class System_controller {
         String key;
         String[] menu_options = new String[]{
                 "Check your balance", "Change your password",
-                "Deposit a value ", "Withdraw a value",
+                "Withdraw a value", "Deposit a value ",
                 "Check stock prices", "Log off ", "Shutdown"
         };
         String regex = "[1-"+menu_options.length+"]";
@@ -116,10 +117,10 @@ public class System_controller {
             user.cg_pass(id);
             home_user(id);
         }else if(key.equals("3")){
-
+            user.withdraw(id);
             home_user(id);
         }else if(key.equals("4")){
-
+            user.deposit(id);
             home_user(id);
         }else if(key.equals("5")){
 
@@ -137,14 +138,14 @@ public class System_controller {
 
     }
     // THIS METHOD IS RESPONSIBLE FOR WRITING THE WHOLE FILE.
-    public void data_adder(String id, String type, String element){
+    public void data_adder(String id, String type, String element, int index){
         String address = "src\\com\\jetbrains\\"+type+"\\"+id+".txt";
 
 
 
         String[] text = file_reader(id, 3);
 
-        text[1] = element;
+        text[index] = element;
 
 
         //THIS VARIABLE IS WHERE ALL INFORMATION, EVEN THE UPDATED ELEMENT, WILL BE WRITTEN TO A FILE;
@@ -165,6 +166,11 @@ public class System_controller {
             text += array[i] + "\n";
         }
        return text;
+    }
+    // THIS METHOD ROUNDS THE STRING REPRESENTING MONEY TO 2 DECIMAL PLACES
+    public String round_value(Double value){
+        DecimalFormat df = new DecimalFormat("#.##");
+        return df.format(value);
     }
 
 

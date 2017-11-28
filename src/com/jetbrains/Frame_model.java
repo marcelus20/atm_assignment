@@ -20,7 +20,7 @@ public class Frame_model {
         }
         sys.print("+"+sys.str_mult("-",F_width)+"-"+"+");
     }
-     public void set_frame_ordered(String[] options){
+    public void set_frame_ordered(String[] options){
          System_controller sys = new System_controller();
          //sys.print("+"+sys.str_mult("-",F_width+4)+"-"+"+");
          for (int i = 0; i<options.length;i++){
