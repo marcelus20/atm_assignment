@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/com/jetbrains/Staff_rep.java" line="72" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="657c1a24-9b04-44df-b9ea-60f8f6f87d6d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jetbrains/Staff_rep.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/jetbrains/staff/admin.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/assignment/com/jetbrains/System_controller.class" afterPath="$PROJECT_DIR$/out/production/assignment/com/jetbrains/System_controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/assignment/com/jetbrains/User_rep.class" afterPath="$PROJECT_DIR$/out/production/assignment/com/jetbrains/User_rep.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/jetbrains/Main.java" afterPath="$PROJECT_DIR$/src/com/jetbrains/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/jetbrains/System_controller.java" afterPath="$PROJECT_DIR$/src/com/jetbrains/System_controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/jetbrains/User_rep.java" afterPath="$PROJECT_DIR$/src/com/jetbrains/User_rep.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/jetbrains/users/2100.txt" afterPath="$PROJECT_DIR$/src/com/jetbrains/users/2100.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/jetbrains/users/4433.txt" afterPath="$PROJECT_DIR$/src/com/jetbrains/users/4433.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="297">
+              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -27,21 +40,24 @@
       <file leaf-file-name="4433.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/users/4433.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="66">
+              <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User_rep.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User_rep.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/User_rep.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="643">
+              <caret line="192" column="34" lean-forward="false" selection-start-line="192" selection-start-column="34" selection-end-line="192" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#login#0;class#User_rep#0" expanded="false" />
+                <element signature="e#961#987#0" expanded="false" />
                 <element signature="method#check_bal#0;class#User_rep#0" expanded="false" />
+                <element signature="method#cg_pass#0;class#User_rep#0" expanded="false" />
                 <element signature="method#withdraw#0;class#User_rep#0" expanded="false" />
                 <element signature="method#deposit#0;class#User_rep#0" expanded="false" />
                 <element signature="method#stck_pricing#0;class#User_rep#0" expanded="false" />
@@ -50,15 +66,51 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Staff_rep.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Staff_rep.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="112" column="28" lean-forward="false" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+              <folding>
+                <element signature="method#home#0;class#Staff_rep#0" expanded="false" />
+                <element signature="method#check_balances#0;class#Staff_rep#0" expanded="false" />
+                <element signature="method#check_u_balance#0;class#Staff_rep#0" expanded="false" />
+                <element signature="method#create_u_s#0;class#Staff_rep#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="felipe.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jetbrains/staff/felipe.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jetbrains/staff/admin.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="System_controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/System_controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
-              <caret line="138" column="23" lean-forward="false" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
+            <state relative-caret-position="416">
+              <caret line="281" column="42" lean-forward="false" selection-start-line="281" selection-start-column="42" selection-end-line="281" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#text_cap#0;class#System_controller#0" expanded="false" />
                 <element signature="method#file_reader#0;class#System_controller#0" expanded="false" />
+                <element signature="method#array_printer#0;class#System_controller#0" expanded="false" />
                 <element signature="method#array_lister#0;class#System_controller#0" expanded="false" />
                 <element signature="method#regex_val#0;class#System_controller#0" expanded="false" />
                 <element signature="method#f_exists#0;class#System_controller#0" expanded="false" />
@@ -80,7 +132,7 @@
       <file leaf-file-name="Frame_model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Frame_model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
+            <state relative-caret-position="255">
               <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="method#set_frame_ordered#0;class#Frame_model#0" expanded="false" />
@@ -93,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/users/2100.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -118,6 +170,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>file_</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -132,11 +189,13 @@
         <option value="$PROJECT_DIR$/src/com/jetbrains/Frame_model.java" />
         <option value="$PROJECT_DIR$/stocks.txt" />
         <option value="$PROJECT_DIR$/src/com/jetbrains/stocks.txt" />
-        <option value="$PROJECT_DIR$/src/com/jetbrains/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/jetbrains/System_controller.java" />
-        <option value="$PROJECT_DIR$/src/com/jetbrains/users/4433.txt" />
-        <option value="$PROJECT_DIR$/src/com/jetbrains/users/2100.txt" />
+        <option value="$PROJECT_DIR$/src/com/jetbrains/staff/admin.txt" />
         <option value="$PROJECT_DIR$/src/com/jetbrains/User_rep.java" />
+        <option value="$PROJECT_DIR$/src/com/jetbrains/users/2100.txt" />
+        <option value="$PROJECT_DIR$/src/com/jetbrains/users/4433.txt" />
+        <option value="$PROJECT_DIR$/src/com/jetbrains/System_controller.java" />
+        <option value="$PROJECT_DIR$/src/com/jetbrains/Staff_rep.java" />
+        <option value="$PROJECT_DIR$/src/com/jetbrains/Main.java" />
       </list>
     </option>
   </component>
@@ -181,6 +240,13 @@
               <item name="assignment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jetbrains" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jetbrains" type="462c0819:PsiDirectoryNode" />
+              <item name="staff" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
@@ -282,7 +348,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41935483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39892474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -335,7 +401,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -362,7 +428,10 @@
           <caret line="195" column="74" lean-forward="false" selection-start-line="195" selection-start-column="74" selection-end-line="195" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#User_rep#0" expanded="false" />
+            <element signature="e#961#987#0" expanded="false" />
             <element signature="method#check_bal#0;class#User_rep#0" expanded="false" />
+            <element signature="method#cg_pass#0;class#User_rep#0" expanded="false" />
             <element signature="method#withdraw#0;class#User_rep#0" expanded="false" />
             <element signature="method#deposit#0;class#User_rep#0" expanded="false" />
             <element signature="method#stck_pricing#0;class#User_rep#0" expanded="false" />
@@ -396,6 +465,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#text_cap#0;class#System_controller#0" expanded="false" />
             <element signature="method#file_reader#0;class#System_controller#0" expanded="false" />
+            <element signature="method#array_printer#0;class#System_controller#0" expanded="false" />
             <element signature="method#array_lister#0;class#System_controller#0" expanded="false" />
             <element signature="method#regex_val#0;class#System_controller#0" expanded="false" />
             <element signature="method#f_exists#0;class#System_controller#0" expanded="false" />
@@ -435,7 +505,10 @@
           <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#User_rep#0" expanded="false" />
+            <element signature="e#961#987#0" expanded="false" />
             <element signature="method#check_bal#0;class#User_rep#0" expanded="false" />
+            <element signature="method#cg_pass#0;class#User_rep#0" expanded="false" />
             <element signature="method#withdraw#0;class#User_rep#0" expanded="false" />
             <element signature="method#deposit#0;class#User_rep#0" expanded="false" />
             <element signature="method#stck_pricing#0;class#User_rep#0" expanded="false" />
@@ -469,6 +542,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#text_cap#0;class#System_controller#0" expanded="false" />
             <element signature="method#file_reader#0;class#System_controller#0" expanded="false" />
+            <element signature="method#array_printer#0;class#System_controller#0" expanded="false" />
             <element signature="method#array_lister#0;class#System_controller#0" expanded="false" />
             <element signature="method#regex_val#0;class#System_controller#0" expanded="false" />
             <element signature="method#f_exists#0;class#System_controller#0" expanded="false" />
@@ -520,6 +594,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#text_cap#0;class#System_controller#0" expanded="false" />
             <element signature="method#file_reader#0;class#System_controller#0" expanded="false" />
+            <element signature="method#array_printer#0;class#System_controller#0" expanded="false" />
             <element signature="method#array_lister#0;class#System_controller#0" expanded="false" />
             <element signature="method#regex_val#0;class#System_controller#0" expanded="false" />
             <element signature="method#f_exists#0;class#System_controller#0" expanded="false" />
@@ -551,7 +626,10 @@
           <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#User_rep#0" expanded="false" />
+            <element signature="e#961#987#0" expanded="false" />
             <element signature="method#check_bal#0;class#User_rep#0" expanded="false" />
+            <element signature="method#cg_pass#0;class#User_rep#0" expanded="false" />
             <element signature="method#withdraw#0;class#User_rep#0" expanded="false" />
             <element signature="method#deposit#0;class#User_rep#0" expanded="false" />
             <element signature="method#stck_pricing#0;class#User_rep#0" expanded="false" />
@@ -583,6 +661,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#text_cap#0;class#System_controller#0" expanded="false" />
             <element signature="method#file_reader#0;class#System_controller#0" expanded="false" />
+            <element signature="method#array_printer#0;class#System_controller#0" expanded="false" />
             <element signature="method#array_lister#0;class#System_controller#0" expanded="false" />
             <element signature="method#regex_val#0;class#System_controller#0" expanded="false" />
             <element signature="method#f_exists#0;class#System_controller#0" expanded="false" />
@@ -614,7 +693,10 @@
           <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#User_rep#0" expanded="false" />
+            <element signature="e#961#987#0" expanded="false" />
             <element signature="method#check_bal#0;class#User_rep#0" expanded="false" />
+            <element signature="method#cg_pass#0;class#User_rep#0" expanded="false" />
             <element signature="method#withdraw#0;class#User_rep#0" expanded="false" />
             <element signature="method#deposit#0;class#User_rep#0" expanded="false" />
             <element signature="method#stck_pricing#0;class#User_rep#0" expanded="false" />
@@ -639,9 +721,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/staff/admin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Frame_model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
+        <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="method#set_frame_ordered#0;class#Frame_model#0" expanded="false" />
@@ -649,38 +739,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/users/4433.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jetbrains/users/2100.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/users/4433.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="66">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jetbrains/System_controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="138" column="23" lean-forward="false" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
+        <state relative-caret-position="416">
+          <caret line="281" column="42" lean-forward="false" selection-start-line="281" selection-start-column="42" selection-end-line="281" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#text_cap#0;class#System_controller#0" expanded="false" />
             <element signature="method#file_reader#0;class#System_controller#0" expanded="false" />
+            <element signature="method#array_printer#0;class#System_controller#0" expanded="false" />
             <element signature="method#array_lister#0;class#System_controller#0" expanded="false" />
             <element signature="method#regex_val#0;class#System_controller#0" expanded="false" />
             <element signature="method#f_exists#0;class#System_controller#0" expanded="false" />
@@ -700,15 +783,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jetbrains/User_rep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="643">
+          <caret line="192" column="34" lean-forward="false" selection-start-line="192" selection-start-column="34" selection-end-line="192" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#User_rep#0" expanded="false" />
+            <element signature="e#961#987#0" expanded="false" />
             <element signature="method#check_bal#0;class#User_rep#0" expanded="false" />
+            <element signature="method#cg_pass#0;class#User_rep#0" expanded="false" />
             <element signature="method#withdraw#0;class#User_rep#0" expanded="false" />
             <element signature="method#deposit#0;class#User_rep#0" expanded="false" />
             <element signature="method#stck_pricing#0;class#User_rep#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Staff_rep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="112" column="28" lean-forward="false" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+          <folding>
+            <element signature="method#home#0;class#Staff_rep#0" expanded="false" />
+            <element signature="method#check_balances#0;class#Staff_rep#0" expanded="false" />
+            <element signature="method#check_u_balance#0;class#Staff_rep#0" expanded="false" />
+            <element signature="method#create_u_s#0;class#Staff_rep#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/staff/felipe.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

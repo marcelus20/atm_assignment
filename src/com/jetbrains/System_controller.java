@@ -9,6 +9,8 @@ public class System_controller {
     public void print(Object element){
         System.out.println(element);
     }
+
+
     //THIS METHOD CAPTURES TEXT FROM KEYBOARD
     public String text_cap(String msg){
         System.out.print(msg);
@@ -19,9 +21,11 @@ public class System_controller {
         }catch(Exception e){}
         return element;
     }
+
+
     //READING FILES
-    public String[] file_reader(String id, int num_lines){
-        String ad_file = "src\\com\\jetbrains\\users\\"+id+".txt";
+    public String[] file_reader(String id, int num_lines, String type){
+        String ad_file = "src\\com\\jetbrains\\"+type+"\\"+id+".txt";
         String [] data = new String[num_lines];
         String line = "";
         try{
@@ -46,6 +50,8 @@ public class System_controller {
             print(array[i]);
         }
     }
+
+
     //LISTING FILES IN A DIRECTORY
     public String[] array_lister(String directory){
         File folder = new File(directory);
@@ -55,6 +61,8 @@ public class System_controller {
             list[i] = list_files[i].getName().split(".txt")[0];
         }
     return list;}
+
+
     //VALIDATING THE TEXT_CAP METHOD
     public String regex_val(String msg, String regex, String error_msg){
         String element;
@@ -69,6 +77,8 @@ public class System_controller {
             }
         }while(!valid);
     return element;}
+
+
     //CHECKING IF FILE EXISTS
     public boolean f_exists(String address){
         if(!new File(address).exists()){
@@ -77,6 +87,8 @@ public class System_controller {
             return true;
         }
     }
+
+
     //THIS METHOD PRINTS THE SAME STRING THE TIMES YOU WANT IN THE SAME LINE
     //IF YOU DO, FOR INSTANCE str_mult("=",5), IT WILL RETURN "====="
     public String str_mult(String str, int times){
@@ -86,6 +98,8 @@ public class System_controller {
         }
         return text;
     }
+
+
     //JUST A METHOD TO WELCOME WHO STARTS THE SYSTEM
     public void welcome_msg(){
 
@@ -96,6 +110,8 @@ public class System_controller {
         Frame_model frame = new Frame_model(24, 0);
         frame.set_frame_centralized(msg_element);
     }
+
+
     //THE MENU HOME AFTER THE PERSON HAS LOGGED IN
     public void home_user(String id){
         User_rep user = new User_rep();
@@ -134,19 +150,23 @@ public class System_controller {
             print("THANKS FOR USING OR SERVICES, COME BACK SOON, PLEASE!");
             System.exit(0);
     }}
+
+
     //THIS METHOD IS FOR THE USER HAVE SOME TIME TO ANALYSING THE OUTCOMES BEFORE THE CODE CONTINUES
     //IT'S A EQUIVALENT System.pause() FROM C LANGUAGE
     public void pause(){
         text_cap("Press enter to continue...");
 
     }
+
+
     // THIS METHOD IS RESPONSIBLE FOR WRITING THE WHOLE FILE.
     public void data_adder(String id, String type, String element, int index){
         String address = "src\\com\\jetbrains\\"+type+"\\"+id+".txt";
 
 
 
-        String[] text = file_reader(id, 3);
+        String[] text = file_reader(id, 3, type);
 
         text[index] = element;
 
@@ -161,6 +181,8 @@ public class System_controller {
         }catch(Exception e){System.out.println(e);}
 
     }
+
+
     // THIS METHOD IS USED TO GET THE WHOLE ARRAY AND SAVE IN JUST ONE STRING VARIABLE, BEING THE ELEMENTS
     // SEPARATED BY "\n", USED TO COMPLEMENT THE DATA_ADDER METHOD.
     public String ar_toSring(String[] array){
@@ -170,11 +192,15 @@ public class System_controller {
         }
        return text;
     }
+
+
     // THIS METHOD ROUNDS THE STRING REPRESENTING MONEY TO 2 DECIMAL PLACES
     public String round_value(Double value){
         DecimalFormat df = new DecimalFormat("#.##");
         return df.format(value);
     }
+
+
     //THIS METHOD IS FOR UPDATING THE STOCK.TXT FILE. EVERY TIME USER CHECK THE STOCK PRICING, IT WILL UPDATE
     // (SIMULATION OF A REAL TIME MARKET DATA)
     public void update_stcks(){
@@ -200,6 +226,8 @@ public class System_controller {
         }
         write_ent_file("src/com/jetbrains/stocks.txt", text);
     }
+
+
     // THIS METHOD WRITES AND REWRITES CONTENTS TO A ENTIRE FILE, NOT CARRYING ABOUT WHAT THERE WAS BEFORE,
     // IT WILL BE USED TO WRITE WHATEVER WAS UPDATED IN THE STOCK PRICING
     public void write_ent_file(String address, String element){
@@ -210,6 +238,8 @@ public class System_controller {
             br.close();
         }catch(Exception e){}
     }
+
+
     // THIS METHOD READS ANY FILE INDEPENDENTLY ON THE ID LOOGED IN.
     public void read_ent_file (String address, int lines){
         Frame_model frame = new Frame_model(45, 0);
@@ -235,6 +265,24 @@ public class System_controller {
         frame.set_frame_centralized(text);
 
     }
+
+
+    //THIS METHOD CREATES A FILE, IT WILL BE USED IN CREATING USER STAFF_REP METHOD
+    public void f_creater(String adress, String id, String pin, String deposit){
+        File f;
+        String element;
+        String address_;
+
+        address_ = adress+"\\"+id+".txt";
+        print("Creating User...");
+        f = new File(address_);
+        element = id+"\n"+pin+"\n"+deposit;
+        print("Saving information...");
+        write_ent_file(address_ , element);
+        print("User created sucessfuly!");
+    }
+
+
 
 
 

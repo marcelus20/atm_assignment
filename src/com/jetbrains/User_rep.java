@@ -1,5 +1,4 @@
 package com.jetbrains;
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,29 +15,34 @@ public class User_rep {
         System_controller sys = new System_controller();
         String id;
         String pass;
+        String type;
         boolean valid;
         boolean pass_valid;
 
         String info_list[];
 
         do{
-            id = sys.regex_val("type your ID: ",
-                    "[0-9][0-9][0-9][0-9]", "It must be numbers and contain just 4 digits");
-            if (!sys.f_exists("src\\com\\jetbrains\\users\\"+id+".txt")){
+            id = sys.text_cap("type your ID");
+            if(!id.matches("[0-9][0-9][0-9][0-9]")){
+                type = "staff";
+            }else{
+                type= "users";
+            }
+            if (!sys.f_exists("src\\com\\jetbrains\\"+type+"\\"+id+".txt")){
                 sys.print("Id not valid. Try again");
                 valid = false;
             }else{
                 valid = true;
             }
         }while(!valid);
-        info_list = sys.file_reader(id, 3);
+        info_list = sys.file_reader(id, 3, type);
+        //sys.print(info_list[1]);
 
         //EVERYTHING SHOULD HAVE GONE RIGHT WITH THE ID AT THIS POINT, SO KEEP GOING ALONG;
 
         int counter = 0;
         do{
-            pass = sys.regex_val("Type your password: ",
-                    "[0-9][0-9][0-9][0-9]", "It must be numbers and contain just 4 digits");
+            pass = sys.text_cap("type your password");
             if (counter < 3 && !pass.equals(info_list[1])){
                 sys.print("Password not correct");
                 pass_valid = false;
@@ -53,6 +57,11 @@ public class User_rep {
             }
         }while(!pass_valid);
 
+        if(type.equals("staff")){
+            Staff_rep staff = new Staff_rep();
+            staff.home(id);
+        }
+
         g_id = info_list[0];
         g_pass = info_list[1];
         g_balance = info_list[2];
@@ -61,7 +70,7 @@ public class User_rep {
     // METHOD FOR CHECKING THE BALANCE
     public void check_bal(String id){
         System_controller sys = new System_controller();
-        String balance = sys.file_reader(id, 3)[2];
+        String balance = sys.file_reader(id, 3, "users")[2];
         String[] lines_frame = new String[]{"Your Balance is", balance};
         Frame_model frame = new Frame_model(20, 0);
         frame.set_frame_centralized(lines_frame);
@@ -70,7 +79,7 @@ public class User_rep {
     //METHOD FOR CHANGING THE PASSWORD
     public void cg_pass(String id){
         System_controller sys = new System_controller();
-        String pass = sys.file_reader(id,3)[1];
+        String pass = sys.file_reader(id,3, "users")[1];
         boolean equal1;
         boolean equal2;
         String new_pass;
@@ -141,7 +150,7 @@ public class User_rep {
         // HERE IS WHERE THE USER WILL INSERT THE OPTION FOR THE WITHDRAW OPERATION
         value = sys.regex_val("OPTION: ", "[1-"+withd_options.length+"]",
                 "You should type just numbers between 1 and "+withd_options.length);
-        String[]lines = sys.file_reader(id, 3);
+        String[]lines = sys.file_reader(id, 3, "users");
 
         //INSTEAD OF DOING MANY IF AND ELSE STATEMENT, I AM USING DICTIONARIES, I KNOW THIS IS A MORE COMPLEX AND
         //ADVANCED STUFF, BUT I PREFER DOING THIS AS THIS IS MUCH EASER.
@@ -190,7 +199,7 @@ public class User_rep {
                 "^0$|^[1-9]\\d*$|^\\.\\d+$|^0\\.\\d*$|^[1-9]\\d*\\.\\d*$",// FOR ACCEPTING DECIMAL VALUES AND INTEGERS
                 "just numbers should be deposited, integer or decimal");
 
-        current_balance = sys.file_reader(id, 3)[2];
+        current_balance = sys.file_reader(id, 3, "users")[2];
         new_balance = Double.valueOf(current_balance)+Double.valueOf(value);
 
         sys.data_adder(id, "users", sys.round_value(new_balance), 2);

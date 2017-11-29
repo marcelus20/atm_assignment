@@ -5,7 +5,7 @@ public class Main {
     Main(){
         User_rep user = new User_rep();
         System_controller sys= new System_controller();
-
+        Staff_rep staff = new Staff_rep();
         sys.welcome_msg();
         user.login();
 
@@ -15,7 +15,9 @@ public class Main {
         //user.deposit("2100");
 
         //sys.read_ent_file("src/com/jetbrains/stocks.txt", 13);
-
+        //staff.check_balances();
+        //staff.check_u_balance();
+        //staff.create_u_s();
     }
 
     public static void main(String[] args) {
