@@ -22,7 +22,8 @@ public class User_rep {
         String info_list[];
 
         do{
-            id = sys.regex_val("type your ID: ", "[0-9]+", "You should type just numbers!");
+            id = sys.regex_val("type your ID: ",
+                    "[0-9][0-9][0-9][0-9]", "It must be numbers and contain just 4 digits");
             if (!sys.f_exists("src\\com\\jetbrains\\users\\"+id+".txt")){
                 sys.print("Id not valid. Try again");
                 valid = false;
@@ -36,7 +37,8 @@ public class User_rep {
 
         int counter = 0;
         do{
-            pass = sys.regex_val("Type your password: ", "[0-9A-Za-z]+", "type just regular characters");
+            pass = sys.regex_val("Type your password: ",
+                    "[0-9][0-9][0-9][0-9]", "It must be numbers and contain just 4 digits");
             if (counter < 3 && !pass.equals(info_list[1])){
                 sys.print("Password not correct");
                 pass_valid = false;
