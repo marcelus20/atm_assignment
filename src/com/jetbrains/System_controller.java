@@ -1,4 +1,5 @@
 package com.jetbrains;
+import java.awt.*;
 import java.io.*;
 import java.text.DecimalFormat;
 
@@ -123,12 +124,14 @@ public class System_controller {
             user.deposit(id);
             home_user(id);
         }else if(key.equals("5")){
-
+            user.stck_pricing();
             home_user(id);
         }else if(key.equals("6")){
-
+            print("loging off...");
+            user.login();
             home_user(id);
         }else if(key.equals("7")){
+            print("THANKS FOR USING OR SERVICES, COME BACK SOON, PLEASE!");
             System.exit(0);
     }}
     //THIS METHOD IS FOR THE USER HAVE SOME TIME TO ANALYSING THE OUTCOMES BEFORE THE CODE CONTINUES
@@ -171,6 +174,66 @@ public class System_controller {
     public String round_value(Double value){
         DecimalFormat df = new DecimalFormat("#.##");
         return df.format(value);
+    }
+    //THIS METHOD IS FOR UPDATING THE STOCK.TXT FILE. EVERY TIME USER CHECK THE STOCK PRICING, IT WILL UPDATE
+    // (SIMULATION OF A REAL TIME MARKET DATA)
+    public void update_stcks(){
+        String text = "";
+        int sign;
+        String sign_;
+        String[] companies = new String []{
+                "FACEBOOK", "GOOGLE", "EBAY", "TESLA", "NASA", "SPACE-X", "PRETROBRAS",
+                "BANK OF IRELAND", "BANK OF AMERICA", "CPL RESOURCES", "ANIMEX PLC",
+                "DONEGAL INVESTIMENT", "GLAMBIA PLC"
+        };
+
+
+
+        for (int i = 0; i<companies.length;i++ ){
+            sign = (int) (Math.random()*2+0);
+            if(sign == 1){
+                sign_ = "-";
+            }else{
+                sign_ = "+";
+            }
+            text +=companies[i]+" "+ round_value(Math.random()*40+10)+" "+" "+sign_+""+round_value(Math.random()*5+1)+"%"+"\n";
+        }
+        write_ent_file("src/com/jetbrains/stocks.txt", text);
+    }
+    // THIS METHOD WRITES AND REWRITES CONTENTS TO A ENTIRE FILE, NOT CARRYING ABOUT WHAT THERE WAS BEFORE,
+    // IT WILL BE USED TO WRITE WHATEVER WAS UPDATED IN THE STOCK PRICING
+    public void write_ent_file(String address, String element){
+        try{
+            BufferedWriter br = new BufferedWriter(new FileWriter(address));
+            br.write(element);
+            br.flush();
+            br.close();
+        }catch(Exception e){}
+    }
+    // THIS METHOD READS ANY FILE INDEPENDENTLY ON THE ID LOOGED IN.
+    public void read_ent_file (String address, int lines){
+        Frame_model frame = new Frame_model(45, 0);
+        String[] text = new String[lines];
+        String line;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(address));
+            line = br.readLine();
+
+            int counter = 0;
+            while (line != null){
+                text[counter] = line;
+                counter++;
+                line = br.readLine();
+
+            }
+
+
+
+        }catch(Exception e){}
+
+
+        frame.set_frame_centralized(text);
+
     }
 
 

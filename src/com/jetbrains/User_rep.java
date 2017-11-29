@@ -200,5 +200,23 @@ public class User_rep {
         sys.pause();
 
     }
+    //METHOD FOR CHECKING STOCK PRICING
+    public void stck_pricing(){
+        System_controller sys = new System_controller();
+        Frame_model frame = new Frame_model(45, 0);
+
+        //UPDATING THE STOCK PRICING:
+        sys.update_stcks();
+
+        sys.read_ent_file("src/com/jetbrains/stocks.txt", 13);
+        sys.pause();
+        String option = sys.regex_val("Back to Menu? Y/N", "[YNyn]", "you should type just Y or N");
+        if (!option.toUpperCase().equals("Y")){
+            sys.print("Closing the system...");
+            System.exit(0);
+        }
+
+
+    }
 
 }
