@@ -76,15 +76,16 @@ public class User_rep {
         String text;
         String tpd_pass;
 
-        sys.print("IF YOU WANT TO GIVE UP ON CHANGING YOUR PASSWORD, JUST TYPE \"exit\" AT ANY TIME");
+        sys.print("IF YOU WANT TO GIVE UP ON CHANGING YOUR PASSWORD, JUST TYPE \"0000\" AT ANY TIME");
         do{
-            tpd_pass = sys.text_cap("type your current password: ");
-            if (tpd_pass.equals("exit")){
-                equal1 = false;
-                sys.home_user(id);
-            }else if (!tpd_pass.equals(pass)){
+            tpd_pass = sys.regex_val("type your current password, it must contain 4 digits: ",
+                    "[0-9][0-9][0-99][0-9]", "You should type a 4 digit PIN");
+            if (tpd_pass.equals("0000")){
                 sys.print("Returning to Menu");
                 sys.home_user(id);
+                equal1 = false;
+            }else if (!tpd_pass.equals(pass)){
+                sys.print("The password you type does not match the current password. Try again!");
                 equal1 = false;
             }else{
                 equal1 = true;
@@ -93,29 +94,24 @@ public class User_rep {
 
 
         do{
-            new_pass = sys.text_cap("type your new password: ");
-            if (new_pass.equals("exit")){
+            new_pass = sys.regex_val("type your new password, it must contain 4 digits: ",
+                    "[0-9][0-9][0-99][0-9]", "You should type a 4 digit PIN");
+            if (new_pass.equals("0000")){
                 sys.print("Returning to Menu");
                 sys.pause();
                 sys.home_user(id);
             }
 
             confirming = sys.text_cap("Type once again for confirming: ");
-            if (confirming.equals("exit")){
+            if (confirming.equals("0000")){
                 sys.print("Returning to Menu");
                 sys.pause();
                 sys.home_user(id);
             }
-
-            if (new_pass.equals("exit")){
-                sys.print("You typed different passwords, please, enter the same password two times");
-                equal2 = false;
-            }else if (!new_pass.equals(confirming)){
-                sys.print("Returning to Menu");
-                sys.home_user(id);
+            if (!new_pass.equals(confirming)){
+                sys.print("Password does not match, try again!");
                 equal2 = false;
             } else{
-
                 sys.data_adder(id, "users", new_pass, 1);//INDEX IS 1 CAUSE IT IS CHANGING THE PASSWORD.
                 sys.print("Password changed successfully\n\n");
                 equal2 = true;

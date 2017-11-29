@@ -137,7 +137,7 @@ public class System_controller {
     //THIS METHOD IS FOR THE USER HAVE SOME TIME TO ANALYSING THE OUTCOMES BEFORE THE CODE CONTINUES
     //IT'S A EQUIVALENT System.pause() FROM C LANGUAGE
     public void pause(){
-        text_cap("Press any key to continue...");
+        text_cap("Press enter to continue...");
 
     }
     // THIS METHOD IS RESPONSIBLE FOR WRITING THE WHOLE FILE.
