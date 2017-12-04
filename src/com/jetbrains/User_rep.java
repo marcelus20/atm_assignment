@@ -220,6 +220,7 @@ public class User_rep {
         String option = sys.regex_val("Back to Menu? Y/N", "[YNyn]", "you should type just Y or N");
         if (!option.toUpperCase().equals("Y")){
             sys.print("Closing the system...");
+            sys.print("THANKS FOR USING OR SERVICES, COME BACK SOON, PLEASE!");
             System.exit(0);
         }
 

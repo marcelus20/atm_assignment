@@ -8,7 +8,7 @@ public class Staff_rep {
         String key;
         String[] menu_options = new String[]{
                 "Create a new User", "See balance per user",
-                "See all balance together", "See activity log",
+                "See all balance together",
                 "Log off", "Shutdown"
         };
         String regex = "[1-"+menu_options.length+"]";
@@ -30,13 +30,10 @@ public class Staff_rep {
             sys.pause();
             home(id);
         }else if(key.equals("4")){
-
-            home(id);
-        }else if(key.equals("5")){
             sys.print("loging off...");
             user.login();
             home(id);
-        }else if(key.equals("6")){
+        }else if(key.equals("5")){
             sys.print("THANKS FOR USING OR SERVICES, COME BACK SOON, PLEASE!");
             System.exit(0);
         }}
@@ -54,6 +51,8 @@ public class Staff_rep {
 
         total_balance = 0.0;
 
+        int[] count_acc = new int[4];
+
 
         sys.print(" ID      Value      Category");
         for (int i =0; i< user_list.length; i++){
@@ -61,12 +60,16 @@ public class Staff_rep {
             balance = sys.file_reader(id, 3,"users")[2];
             if (Double.valueOf(balance)<=100){
                 account = "small";
+                count_acc[0] += 1;
             }else if(Double.valueOf(balance)>100 && Double.valueOf(balance)<= 200){
                 account = "medium";
+                count_acc[1] += 1;
             }else if((Double.valueOf(balance)>200 && Double.valueOf(balance)<= 300)){
                 account = "large";
+                count_acc[2] +=1;
             }else {
                 account = "extra large";
+                count_acc[3] +=1;
             }
             user_list[i] = id + " | "+balance+" | "+account;
             total_balance += Double.valueOf(balance);
@@ -74,6 +77,10 @@ public class Staff_rep {
         }
         frame.set_frame_ordered(user_list);
         sys.print("Total balance = "+ total_balance);
+        sys.print("Small accounts: "+count_acc[0]);
+        sys.print("Medium accounts: "+count_acc[1]);
+        sys.print("Large accounts: "+count_acc[2]);
+        sys.print("Extra-large accounts: "+count_acc[3]);
 
         }
 
